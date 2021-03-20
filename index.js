@@ -2,7 +2,7 @@ const fs = require("fs");
 const { parse, dirname } = require("path");
 const jsonGenerator = require("./jsonGenerator");
 
-module.exports = (encode, userOnly = false) => {
+module.exports = (encode, userOnly = false, trim = false) => {
   const files = [
     ...(userOnly
       ? []
@@ -25,7 +25,7 @@ module.exports = (encode, userOnly = false) => {
   files.forEach((file, i, { length }) => {
     fs.writeFileSync(
       dirname(file) + "/" + parse(file).name + ".json",
-      JSON.stringify(jsonGenerator(file, encode), null, 2)
+      JSON.stringify(jsonGenerator(file, encode, trim), null, 2)
     );
     console.log(i, "/", length - 1, file);
   });

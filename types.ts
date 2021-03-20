@@ -8,54 +8,54 @@ export interface AnimationData {
   /** Y座標基準ライン */
   ymode: "頭上" | "中心" | "足元";
   /** フレーム数 1-99 */
-  frames: string;
+  frames: number;
   /** 効果音とフラッシュのタイミング */
   timings: {
     /** フレーム 1-frames */
-    frameId: string;
+    frameId: number;
     /** 効果音 */
     se: string;
     /** 音量 0-100 */
-    volume: string;
+    volume: number;
     /** テンポ（ピッチ） 50-150 */
-    tempo: string;
+    tempo: number;
     /** 左右バランス 50-150 */
-    pan: string;
+    pan: number;
     /** フラッシュ・範囲 */
     target?: "対象" | "画面";
     /** フラッシュ・赤 0-31 */
-    r?: string;
+    r?: number;
     /** フラッシュ・緑 0-31 */
-    g?: string;
+    g?: number;
     /** フラッシュ・青 0-31 */
-    b?: string;
+    b?: number;
     /** フラッシュ・強さ 0-31 */
-    v?: string;
+    v?: number;
   }[];
   /** フレームごとのアニメーション */
   main: {
     /** フレーム 1-frames */
-    frameId: string;
+    frameId: number;
     /** セルごとの設定 */
     cells: {
       /** パターン番号 1-25 */
-      patternId: string;
+      patternId: number;
       /** X座標 -+320 (白枠: -+160) */
-      x: string;
+      x: number;
       /** Y座標 -+320 (白枠: -+80) */
-      y: string;
+      y: number;
       /** 拡大率 20-800％ */
-      scale: string;
+      scale: number;
       /** 赤 0-200％ */
-      r: string;
+      r: number;
       /** 緑 0-200％ */
-      g: string;
+      g: number;
       /** 青 0-200％ */
-      b: string;
+      b: number;
       /** 彩度 0-200％ */
-      s: string;
+      s: number;
       /** 透明度 0-100％ */
-      a: string;
+      a: number;
     }[];
   }[];
 }

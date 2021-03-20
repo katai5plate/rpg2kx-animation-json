@@ -16,12 +16,17 @@ module.exports = (filePath, encode = "sjis", trim = false) => {
   ).replace(/\r/g, "");
   const data = tsv.split("\n").map((l) => l.split("\t"));
   const getData = (x, y) => data[y][x];
+  const format = (v) =>
+    ["", undefined].includes(v) ? undefined : isFinite(v) ? Number(v) : v;
+  const [name, image, range, ymode, frames] = [1, 2, 3, 4, 5].map((y) =>
+    format(getData(1, y))
+  );
   return {
-    name: getData(1, 1),
-    image: getData(1, 2),
-    range: getData(1, 3),
-    ymode: getData(1, 4),
-    frames: getData(1, 5),
+    name,
+    image,
+    range,
+    ymode,
+    frames,
     timings: (() => {
       const [start, end] = [
         data.findIndex(([y]) => y === "【効果音とフラッシュのタイミング】") + 2,
@@ -42,7 +47,7 @@ module.exports = (filePath, encode = "sjis", trim = false) => {
               _g,
               _b,
               _v,
-            ].map((v) => (["", undefined].includes(v) ? undefined : v));
+            ].map(format);
             return {
               frameId,
               se,
@@ -63,10 +68,10 @@ module.exports = (filePath, encode = "sjis", trim = false) => {
         data.findIndex(([y]) => y === "【戦闘アニメ本体】") + 2,
         data.length - 1,
       ];
-      return data.slice(start, end).map(([frameId, ...line]) => {
+      return data.slice(start, end).map(([_frameId, ...line]) => {
         const PARAM_LENGTH = 9;
         return {
-          frameId,
+          frameId: format(_frameId),
           cells: line
             .map((_, i) =>
               line.slice(i * PARAM_LENGTH, i * PARAM_LENGTH + PARAM_LENGTH)
@@ -83,7 +88,7 @@ module.exports = (filePath, encode = "sjis", trim = false) => {
                 _b,
                 _s,
                 _a,
-              ].map((v) => (["", undefined].includes(v) ? undefined : v));
+              ].map(format);
               return { patternId, x, y, scale, r, g, b, s, a };
             }),
         };
