@@ -21,7 +21,7 @@ RTP 改変素材と同等のライセンスを付与します。
 4. 内容をメモ帳などで `./user` に `{名前}.2kxanm` として保存
 5. 文字コードに応じて、`npm run convert-sjis-user` または `npm run convert-utf8-user` を実行
 
-## スキーマ
+## 構成
 
 ```ts
 export interface AnimationData {
