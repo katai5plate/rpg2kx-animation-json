@@ -4,7 +4,8 @@ RPG2000 / steam2003 の戦闘アニメ JSON データ
 
 ## ライセンス
 
-[ツクールシリーズの規約に準拠](https://tkool.jp/support/)
+[ツクールシリーズの規約に準拠](https://tkool.jp/support/)し、
+RTP 改変素材と同等のライセンスを付与します。
 
 ## どうやって取得したか
 
