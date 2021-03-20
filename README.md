@@ -33,11 +33,11 @@ export interface AnimationData {
   range: "単体" | "全体";
   /** Y座標基準ライン */
   ymode: "頭上" | "中心" | "足元";
-  /** フレーム数 */
+  /** フレーム数 1-99 */
   frames: string;
   /** 効果音とフラッシュのタイミング */
   timings: {
-    /** フレーム */
+    /** フレーム 1-frames */
     frameId: string;
     /** 効果音 */
     se: string;
@@ -60,11 +60,11 @@ export interface AnimationData {
   }[];
   /** フレームごとのアニメーション */
   main: {
-    /** フレーム */
+    /** フレーム 1-frames */
     frameId: string;
     /** セルごとの設定 */
     cells: {
-      /** パターン番号 */
+      /** パターン番号 1-25 */
       patternId: string;
       /** X座標 -+320 (白枠: -+160) */
       x: string;
