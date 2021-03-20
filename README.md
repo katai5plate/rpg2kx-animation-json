@@ -66,21 +66,21 @@ export interface AnimationData {
     cells: {
       /** パターン番号 */
       patternId: string;
-      /** X座標 */
+      /** X座標 -+320 (白枠: -+160) */
       x: string;
-      /** Y座標 */
+      /** Y座標 -+320 (白枠: -+80) */
       y: string;
-      /** 拡大率％ */
+      /** 拡大率 20-800％ */
       scale: string;
-      /** 赤％ */
+      /** 赤 0-200％ */
       r: string;
-      /** 緑％ */
+      /** 緑 0-200％ */
       g: string;
-      /** 青％ */
+      /** 青 0-200％ */
       b: string;
-      /** 彩度％ */
+      /** 彩度 0-200％ */
       s: string;
-      /** 透明度％ */
+      /** 透明度 0-100％ */
       a: string;
     }[];
   }[];
