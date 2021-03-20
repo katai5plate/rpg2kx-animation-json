@@ -1,0 +1,24 @@
+{
+  "name": "rpg2kx-animation-jsons",
+  "version": "1.0.0",
+  "description": "RPG2000 / steam2003 の戦闘アニメ JSON データ",
+  "main": "index.js",
+  "scripts": {
+    "convert": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katai5plate/rpg2kx-animation-jsons.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katai5plate/rpg2kx-animation-jsons/issues"
+  },
+  "homepage": "https://github.com/katai5plate/rpg2kx-animation-jsons#readme",
+  "devDependencies": {
+    "iconv-lite": "^0.6.2"
+  }
+}
