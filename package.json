@@ -4,7 +4,10 @@
   "description": "RPG2000 / steam2003 の戦闘アニメ JSON データ",
   "main": "index.js",
   "scripts": {
-    "convert": "node .",
+    "convert-sjis": "node -e \"require('.')('sjis')\"",
+    "convert-utf8": "node -e \"require('.')('utf8')\"",
+    "convert-sjis-user": "node -e \"require('.')('sjis',true)\"",
+    "convert-utf8-user": "node -e \"require('.')('utf8',true)\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
