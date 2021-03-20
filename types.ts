@@ -59,3 +59,6 @@ export interface AnimationData {
     }[];
   }[];
 }
+export interface AnimationBundle {
+  [folderName: string]: AnimationData[];
+}

@@ -85,4 +85,9 @@ export interface AnimationData {
     }[];
   }[];
 }
+export interface AnimationBundle {
+  "2000": AnimationData[];
+  "2003s": AnimationData[];
+  user?: AnimationData[];
+}
 ```
