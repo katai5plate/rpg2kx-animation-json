@@ -19,7 +19,7 @@ export interface AnimationData {
     volume: number;
     /** テンポ（ピッチ） 50-150 */
     tempo: number;
-    /** 左右バランス 50-150 */
+    /** 左右バランス 0-100 */
     pan: number;
     /** フラッシュ・範囲 */
     target?: "対象" | "画面";
@@ -61,4 +61,43 @@ export interface AnimationData {
 }
 export interface AnimationBundle {
   [folderName: string]: AnimationData[];
+}
+
+export interface MVAnimation {
+  id: number;
+  // 画像
+  animation1Hue: number;
+  animation1Name: string;
+  animation2Hue: number;
+  animation2Name: string;
+  // メインアニメ
+  frames: [
+    number, // パターン番号 0-200
+    number, // X -+408
+    number, // Y -+312
+    number, // 拡大率 10-9999%
+    number, // 回転角度 -+360
+    number, // 左右反転 0/1
+    number, // 不透明度 0-255
+    number // 合成方法 0-3
+  ][][];
+  name: string;
+  position: number; // 0-3 頭上/中心/足元/画面
+  timings: {
+    flashColor: [
+      number, // r 0-255
+      number, // g 0-255
+      number, // b 0-255
+      number // v 0-255
+    ];
+    flashDuration: number; // 1-200
+    flashScope: number; // 0-3 なし/対象/画面/対象消去
+    frame: number; // 0-frames.length
+    se: {
+      name: string;
+      pan: number; // -100-100
+      pitch: number; // 50-150
+      volume: number; // 0-100
+    };
+  }[];
 }

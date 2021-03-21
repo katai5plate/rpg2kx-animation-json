@@ -9,6 +9,7 @@
     "convert-sjis-user": "node -e \"require('.')('sjis',true,false)\" && npm run bundle",
     "convert-utf8-user": "node -e \"require('.')('utf8',true,false)\" && npm run bundle",
     "bundle": "node bundler",
+    "generate-mv": "node generateMvAnime",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

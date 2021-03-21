@@ -91,3 +91,9 @@ export interface AnimationBundle {
   user?: AnimationData[];
 }
 ```
+
+## MV 向けに出力する
+
+1. `npm run bundle` でバンドルファイルを作成する。
+2. `npm run generate-mv` を実行する
+3. `./Animations.json` が作られるので、プロジェクトと上書きするなりして使う。
